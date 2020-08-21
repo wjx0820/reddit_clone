@@ -1,0 +1,10 @@
+version: "3"
+services:
+  reddit-redis:
+    image: "redis"
+    restart: always
+    container_name: "reddit-redis"
+    ports:
+      - 6379:6379
+    volumes:
+      - $PWD/redisdata:/data
