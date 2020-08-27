@@ -13,6 +13,7 @@ import {
 	MeQuery,
 	RegisterMutation,
 	VoteMutationVariables,
+	DeletePostMutationVariables,
 } from "../generated/graphql"
 import { betterUpdateQuery } from "./betterUpdateQuery"
 import Router from "next/router"
@@ -121,7 +122,7 @@ const cursorPagination = (): Resolver => {
 export const createUrqlClient = (ssrExchange: any, ctx: any) => {
 	let cookie = ""
 	if (isServer()) {
-		cookie = ctx.req.headers.cookie
+		cookie = ctx?.req?.headers?.cookie
 	}
 
 	return {
