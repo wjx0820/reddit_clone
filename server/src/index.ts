@@ -38,10 +38,11 @@ const main = async () => {
 
 	// make sure the session middleware run before Apollo middleware
 	const RedisStore = connectRedis(session)
-	const redis = new Redis({
-		host: "127.0.0.1",
-		port: 6379,
-	})
+	// const redis = new Redis({
+	// 	host: "127.0.0.1",
+	// 	port: 6379,
+	// })
+	const redis = new Redis()
 
 	app.use(
 		cors({
